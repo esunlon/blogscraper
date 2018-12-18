@@ -1,9 +1,9 @@
-import request
+import urllib.request
 import re
 class Scrapier:
 
     def decodeHTML(self, url):
-        page = request.urlopen(url)
+        page = urllib.request.urlopen(url)
         html = page.read().decode('utf-8') #coverts bytes type to string
         return html
 

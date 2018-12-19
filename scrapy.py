@@ -10,6 +10,8 @@ class Scrapier:
     def downElement(self, html, regstr):
         elem_reg = re.compile(regstr)
         elem_url_list = elem_reg.findall(html)
+
         for url in elem_url_list:
-            urllib.request.urlretrieve(url, file_name)
+            seg_name = url.split('/')
+            urllib.request.urlretrieve(url, seg_name[-1])
         return elem_url_list
